@@ -72,6 +72,6 @@ deploy:
   repo: git@github.com:kenjilee/kenjilee.github.io.git #github仓库地址
   branch: master # github分支
   
-plugins: #插件，例如生成 RSS 和站点地图的
-- hexo-generator-feed
-- hexo-generator-sitemap
+##plugins: #插件，例如生成 RSS 和站点地图的
+##- hexo-generator-feed
+##- hexo-generator-sitemap
