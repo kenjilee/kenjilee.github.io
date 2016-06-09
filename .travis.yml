@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- '4'
+branches:
+  only:
+  - dev
+env:
+  global:
+    secure: 2ty5gIxz2Sg53I2IBHee/dddDuhZCymvZOawlfN+L9uI8jkKPxJ86NRC85TasDoZhJHCCn0z50EaEG9D8s/nq5ILEYNY5VQUm24CVgZbIQlJm3JgDcC+5ieJxDIXbYagHTDWhqyqK24eZTj2F8fqlxG/rj2obmMOGiF0HxnPt7mjkCxjMhEHOedQ4Q4iIZEPZIsJKa9ZLOHgGKcLzvgPbO9fDfk5hJqqQxk+gjlmVZnMmQK54dKPaLLp/BMaknt37hf23Qti66QHl1TH9g9rxXC0QSrLSjTIRSaEaRpLeH458Vg+ZkEZcc0W6yTXGSySz6LpbTBKQlNTxbUHLNIM62JLigg1IHX5FvMMEGbo/Z7SHzkVji+6IE3wejezd7U37e7K557FOL8h4qTBjXjrHkhJE27Y32ErPJEnqs9/q0Y1PYl09ZM5cYP1kLGMjNU1xW8Ut/qUTe6/Lfr+YJeA1lPEInfvQj5fwNaPJw3mMzRVD/k5XFj+DejlbzCJt7apuPr2kA3ecmhQ8yBtvxUFEQolGbru1KKONuE4qWrgfSnz5DjhVPFlzkmru35a1p/A+plIl+eFFozkN3Rnm9e84QsLaBHzcXLNnFCohOn9q04sLECB5ciFOHx4ispBz2NtM7NwBCx+UF2pYFzK6qqxdU4gkZ1p2iYfNj/XoJ/GIyc=
+before_install:
+- export TZ='Asia/Shanghai'
+- npm install -g hexo
+- npm install -g hexo-cli
+before_script:
+- git config --global user.name "kenjilee"
+- git config --global user.email kenjilee81460@yahoo.com
+- sed -i'' "s~git@github.com:kenjilee/kenjilee.github.io.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/kenjilee/kenjilee.github.io.git~" _config.yml
+install:
+- npm install
+script:
+- hexo clean
+- hexo generate
+after_success:
+- hexo deploy
