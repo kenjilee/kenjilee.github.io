@@ -63,9 +63,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: yeelee
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:kenjilee/kenjilee.github.io.git #github仓库地址
+  branch: master # github分支
+  
+plugins: #插件，例如生成 RSS 和站点地图的
+- hexo-generator-feed
+- hexo-generator-sitemap
