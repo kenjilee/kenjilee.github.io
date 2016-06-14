@@ -29,5 +29,5 @@ after_script:
 - git config user.email "kenjilee81460@yahoo.com"
 - git add .
 - git commit -m "Update docs"
-- git push -f "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+- git push -f "https://${GH_TOKEN}@${github.com/kenjilee/kenjilee.github.io.git}" master:gh-pages
 # E: Build LifeCycle
